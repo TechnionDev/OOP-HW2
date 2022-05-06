@@ -77,8 +77,8 @@ public class ProfesorImpl implements Profesor {
         return -1;
     };
     @Override
-    public Collection<CasaDeBurrito> favoritesByRating(int r) {
-        return this.filterAndSortFavorites(CompareByRating , (CasaDeBurrito c) -> c.averageRating() >= r);
+    public Collection<CasaDeBurrito> favoritesByRating(int rLimit) {
+        return this.filterAndSortFavorites(CompareByRating , (CasaDeBurrito c) -> c.averageRating() >= rLimit);
     }
     private static Comparator<CasaDeBurrito> CompareByDistance = (CasaDeBurrito c1, CasaDeBurrito c2) -> {
         int byDistance = c1.distance() - c2.distance();
@@ -94,8 +94,8 @@ public class ProfesorImpl implements Profesor {
     };
 
     @Override
-    public Collection<CasaDeBurrito> favoritesByDist(int r) {
-        return this.filterAndSortFavorites(CompareByDistance , (CasaDeBurrito c) -> c.distance() <= r);
+    public Collection<CasaDeBurrito> favoritesByDist(int dLimit) {
+        return this.filterAndSortFavorites(CompareByDistance , (CasaDeBurrito c) -> c.distance() <= dLimit);
     }
 
     @Override
