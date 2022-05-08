@@ -109,7 +109,10 @@ public class ProfesorImpl implements Profesor {
         return ((Profesor)o).getId() == this.getId();
     }
 
-
+    @Override
+    public int hashCode() {
+        return this.getId();
+     }
     @Override
     public String toString() {
         return "Profesor: " + this.name + ".\n" +

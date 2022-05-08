@@ -71,6 +71,10 @@ public class CasaDeBurritoImpl implements CasaDeBurrito {
     public int compareTo(CasaDeBurrito o) {
         return this.getId()-o.getId();
     }
+    @Override
+    public int hashCode() {
+       return this.getId();
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -80,3 +84,4 @@ public class CasaDeBurritoImpl implements CasaDeBurrito {
         return compCasa.getId() == this.getId();
     }
 }
+
